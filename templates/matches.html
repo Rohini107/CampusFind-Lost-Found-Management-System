@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}<a href="{{url_for('reports')}}">← Back</a>
+<div class="head mt-3"><div><div class="eyebrow">AI-BASED ASSIGNMENT</div><h2 class="fw-bold">Possible Matches</h2><p class="muted">Explainable similarity using category, keywords, location and date.</p></div></div>
+<div class="matchsource"><b>{{lost.item_name}}</b><span>{{lost.type}} • {{lost.category}} • 📍 {{lost.location}}</span></div>
+{% for score,reasons,r in matches %}<div class="match"><div class="score">{{score}}%<small>match</small></div><div><span class="badge {{'lost' if r.type=='Lost' else 'found'}}">{{r.type}}</span> <b>{{r.item_name}}</b>
+<p>{{r.description}}</p><small>📍 {{r.location}} • {{r.date}}</small><div class="mt-2">{% for x in reasons %}<span class="tag">✓ {{x}}</span>{% endfor %}</div></div></div>
+{% else %}<div class="empty"><div class="display-5">🤝</div><h4>No strong matches yet</h4><p>Add more opposite-type reports and try again.</p></div>{% endfor %}{% endblock %}

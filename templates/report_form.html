@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block content %}<div class="head"><div><div class="eyebrow">REPORT MANAGEMENT</div>
+<h2 class="fw-bold">{{'Edit Report' if report else 'Add New Report'}}</h2></div></div><div class="formbox"><form method="post"><div class="row g-3">
+<div class="col-md-6"><label>Type *</label><select name="type" class="form-select" required><option value="">Select</option>{% for x in ['Lost','Found'] %}<option {{'selected' if report and report.type==x}}>{{x}}</option>{% endfor %}</select></div>
+<div class="col-md-6"><label>Category *</label><select name="category" class="form-select" required><option value="">Select</option>{% for x in categories %}<option {{'selected' if report and report.category==x}}>{{x}}</option>{% endfor %}</select></div>
+<div class="col-md-6"><label>Item Name *</label><input class="form-control" name="item_name" value="{{report.item_name if report else ''}}" required placeholder="Black Dell Laptop"></div>
+<div class="col-md-6"><label>Date</label><input class="form-control" type="date" name="date" value="{{report.date if report else ''}}"></div>
+<div class="col-12"><label>Description</label><textarea class="form-control" name="description" rows="4" placeholder="Color, brand, unique marks...">{{report.description if report else ''}}</textarea></div>
+<div class="col-md-6"><label>Location *</label><input class="form-control" name="location" value="{{report.location if report else ''}}" required placeholder="Library Block"></div>
+<div class="col-md-3"><label>Contact Name</label><input class="form-control" name="contact_name" value="{{report.contact_name if report else ''}}"></div>
+<div class="col-md-3"><label>Phone</label><input class="form-control" name="contact_phone" value="{{report.contact_phone if report else ''}}"></div>
+</div><div class="mt-4"><button class="btn btn-primary">Save Report</button> <a class="btn btn-outline-secondary" href="{{url_for('reports')}}">Cancel</a></div></form></div>{% endblock %}

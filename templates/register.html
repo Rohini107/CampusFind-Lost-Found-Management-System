@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block content %}<div class="auth"><div class="authbox">
+<div class="text-center fs-1">✨</div><h2 class="text-center fw-bold">Create account</h2><p class="text-center muted">Join CampusFind.</p>
+<form method="post"><label>Name</label><input class="form-control mb-3" name="name" required>
+<label>Email</label><input class="form-control mb-3" type="email" name="email" required>
+<label>Password</label><input class="form-control mb-3" type="password" name="password" minlength="6" required>
+<button class="btn btn-primary w-100">Create Account</button></form><p class="text-center mt-3">Already registered? <a href="{{url_for('login')}}">Login</a></p>
+</div></div>{% endblock %}

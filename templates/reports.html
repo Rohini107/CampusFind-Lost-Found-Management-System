@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block content %}<div class="head"><div><div class="eyebrow">{{'DASHBOARD' if dashboard else 'SEARCH & FILTER'}}</div><h2 class="fw-bold">My Reports</h2></div>
+<a class="btn btn-primary" href="{{url_for('new_report')}}">+ Add Report</a></div>
+<div class="filter"><form class="row g-2" method="get" action="{{url_for('reports')}}"><div class="col-lg-4"><input class="form-control" name="q" value="{{request.args.get('q','')}}" placeholder="Search item, description, location..."></div>
+<div class="col-sm-4 col-lg-2"><select class="form-select" name="type"><option value="">All types</option><option {{'selected' if request.args.get('type')=='Lost'}}>Lost</option><option {{'selected' if request.args.get('type')=='Found'}}>Found</option></select></div>
+<div class="col-sm-4 col-lg-2"><select class="form-select" name="category"><option value="">All categories</option>{% for x in categories %}<option {{'selected' if request.args.get('category')==x}}>{{x}}</option>{% endfor %}</select></div>
+<div class="col-sm-4 col-lg-2"><select class="form-select" name="status"><option value="">All statuses</option>{% for x in statuses %}<option {{'selected' if request.args.get('status')==x}}>{{x}}</option>{% endfor %}</select></div>
+<div class="col-lg-2"><button class="btn btn-dark w-100">Search</button></div></form></div>
+<div class="table-responsive tablebox"><table class="table align-middle"><thead><tr><th>Type</th><th>Item</th><th>Category</th><th>Location</th><th>Status</th><th>Actions</th></tr></thead><tbody>
+{% for r in reports %}<tr><td><span class="badge {{'lost' if r.type=='Lost' else 'found'}}">{{r.type}}</span></td><td><b>{{r.item_name}}</b><small class="d-block muted">{{r.date}}</small></td><td>{{r.category}}</td><td>📍 {{r.location}}</td>
+<td><select class="form-select form-select-sm status-select" data-id="{{r.id}}">{% for s in statuses %}<option {{'selected' if r.status==s}}>{{s}}</option>{% endfor %}</select></td>
+<td class="text-nowrap"><a class="btn btn-sm btn-outline-primary" href="{{url_for('matches',rid=r.id)}}">🤝 Match</a>
+<a class="btn btn-sm btn-outline-secondary" href="{{url_for('edit_report',rid=r.id)}}">Edit</a>
+<form class="d-inline" method="post" action="{{url_for('delete_report',rid=r.id)}}" onsubmit="return confirm('Delete this report?')"><button class="btn btn-sm btn-outline-danger">Delete</button></form></td></tr>
+{% else %}<tr><td colspan="6" class="text-center p-5 muted">No reports found.</td></tr>{% endfor %}</tbody></table></div>{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero p-4 p-md-5"><div class="row align-items-center"><div class="col-lg-8">
+<div class="eyebrow">SMART CAMPUS PLATFORM</div><h1>Lost something?<br><span>Find it faster.</span></h1>
+<p class="lead">Report lost and found items, search records and discover possible matches through one simple platform.</p>
+{% if session.get('user_id') %}<a class="btn btn-primary btn-lg" href="{{url_for('new_report')}}">Report an Item</a>
+{% else %}<a class="btn btn-primary btn-lg" href="{{url_for('register')}}">Get Started</a>
+<a class="btn btn-outline-dark btn-lg ms-2" href="{{url_for('login')}}">Login</a>{% endif %}
+</div><div class="col-lg-4 text-center display-1 d-none d-lg-block">🔎🎒</div></div></section>
+<div class="row g-3 my-4">{% for label,val,icon in [('Total Reports',total,'📋'),('Lost Items',lost,'🔍'),('Found Items',found,'🎒'),('Matched',matched,'🤝')] %}
+<div class="col-6 col-lg-3"><div class="stat"><span>{{icon}}</span><div><b>{{val}}</b><small>{{label}}</small></div></div></div>{% endfor %}</div>
+<h2 class="fw-bold mt-4">Latest Reports</h2><div class="row g-3 mt-1">{% for r in recent %}
+<div class="col-md-6 col-lg-4"><div class="cardx h-100"><span class="badge {{'lost' if r.type=='Lost' else 'found'}}">{{r.type}}</span>
+<h5 class="mt-3">{{r.item_name}}</h5><p>{{r.description[:100]}}</p><small>📍 {{r.location}} • {{r.date}}</small><div class="mt-3"><span class="tag">{{r.category}}</span><span class="tag">{{r.status}}</span></div></div></div>
+{% else %}<div class="empty">No reports yet.</div>{% endfor %}</div>{% endblock %}
