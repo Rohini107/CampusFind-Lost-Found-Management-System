@@ -36,7 +36,7 @@ python app.py
 
 For Atlas, set:
 ```powershell
-MONGO_URI="mongodb+srv://campusfind_user:rohinimg@campusfindcluster.4uiuh0y.mongodb.net/?appName=CampusFindCluster"
+"MONGO_URI=mongodb+srv://campusfind_user:rohinimg@campusfindcluster.4uiuh0y.mongodb.net/?appName=CampusFindCluster"
 ```
 
 Default local database:
