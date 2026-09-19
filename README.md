@@ -52,6 +52,9 @@ python app.py
 4.#Live Demo:
 5. Open: [http://127.0.0.1:5000](https://campusfind-lost-found-management-system.onrender.com)
 
+##MongoDB:
+mongodb://localhost:27017
+
 ## GitHub Repository
 
 https://github.com/Rohini107/CampusFind-Lost-Found-Management-System
