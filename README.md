@@ -39,14 +39,6 @@ python app.py
 
 https://github.com/Rohini107/CampusFind-Lost-Found-Management-System
 
-For Atlas, set:
-```powershell
-MONGO_URI="mongodb+srv://campusfind_user:rohinimg@campusfindcluster.4uiuh0y.mongodb.net/?appName=CampusFindCluster"
-```
-
-Default local database:
-`mongodb://localhost:27017/campusfind`
-
 MongoDB database/collections are created automatically after data is inserted.
 
 ## AI-Based Matching
