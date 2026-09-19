@@ -75,6 +75,3 @@ Logout:
 
 ## AI Usage
 ChatGPT was used as a learning/development assistant for planning, code generation, debugging guidance, UI ideas, testing and documentation. The student should review, test and understand the code before submission.
-
-## GitHub
-Create a repository, upload the complete project including README.md, and submit the repository link as required by the assignment.
