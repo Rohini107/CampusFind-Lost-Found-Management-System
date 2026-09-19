@@ -1,6 +1,23 @@
 # CampusFind — Lost & Found Management System
 
-## Assigned Feature Set B
+#Problem Statement
+
+In colleges and universities, students frequently lose personal belongings such as mobile phones, wallets, identity cards, books, bags, calculators, keys, and other valuable items. Traditionally, information about lost and found items is shared through word of mouth, notice boards, or informal messaging groups.
+
+These methods make it difficult to maintain organized records and find matching lost and found items efficiently.
+
+CampusFind provides a centralized web-based platform where users can:
+
+Report lost or found items.
+Search for reported items.
+Filter reports by type, category, and status.
+Edit or delete their reports.
+Track the status of reported items.
+Find possible matches between lost and found reports.
+
+The system helps organize lost-and-found information and makes the process easier and more systematic.
+
+## Assigned Feature Set 
 Add/edit/delete lost or found reports; category selection; search/filter; matching; status tracking; AI-Based Assignment.
 
 ## Technologies
@@ -75,3 +92,47 @@ Logout:
 
 ## AI Usage
 ChatGPT was used as a learning/development assistant for planning, code generation, debugging guidance, UI ideas, testing and documentation. The student should review, test and understand the code before submission.
+
+## Important AI Prompts / AI Usage
+
+The following are examples of important prompts used during development:
+
+Project Planning
+
+"Create a beginner-friendly full-stack Lost and Found Management System using Flask, MongoDB, HTML, CSS and JavaScript according to Feature Set B."
+
+Backend Development
+
+"Create Flask backend code for adding, editing, deleting and viewing lost and found reports using MongoDB."
+
+Authentication
+
+"Implement user registration and login in Flask using password hashing and session authentication."
+
+Search and Filtering
+
+"Implement search and filtering for lost and found reports based on item name, category, type, location and status."
+
+Matching Feature
+
+"Create an explainable similarity matching algorithm to find possible matches between lost and found items using category, keywords, location and date."
+
+MongoDB
+
+"Explain how to connect a Flask application to MongoDB Atlas using an environment variable."
+
+Debugging
+
+"Help debug the Flask MongoDB connection error and explain how to fix the database connection."
+
+Deployment
+
+"Guide me step-by-step to deploy my Flask application with MongoDB Atlas from GitHub to Render."
+
+GitHub
+
+"Explain how to safely upload the Flask project to GitHub while keeping the .env file and database credentials private."
+
+Documentation
+
+"Create professional README documentation for a Lost and Found Management System developed for a college assignment."
