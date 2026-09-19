@@ -32,7 +32,12 @@ venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 python app.py
 ```
-4. Open: [http://127.0.0.1:5000](https://campusfind-lost-found-management-system.onrender.com)
+4.#Live Demo:
+5. Open: [http://127.0.0.1:5000](https://campusfind-lost-found-management-system.onrender.com)
+
+## GitHub Repository
+
+https://github.com/Rohini107/CampusFind-Lost-Found-Management-System
 
 For Atlas, set:
 ```powershell
