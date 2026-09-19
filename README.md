@@ -53,7 +53,7 @@ python app.py
 5. Open: [http://127.0.0.1:5000](https://campusfind-lost-found-management-system.onrender.com)
 
 ##MongoDB:
-https://localhost:27017
+http:MongoDB://localhost:27017
 
 ## GitHub Repository
 
